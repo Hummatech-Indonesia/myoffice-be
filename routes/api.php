@@ -1,11 +1,18 @@
 <?php
 
-use App\Http\Controllers\Auth\EmailController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SosmedAuthController;
+use App\Http\Controllers\EmailController;
+use App\Http\Controllers\PasswordResetController;
+use Illuminate\Auth\Events\PasswordReset;
 
+Route::post('/forgot-password', [PasswordResetController::class, 'sendResetLinkEmail']);
+Route::post('/reset-password', [PasswordResetController::class, 'reset']);
+Route::get('/reset-password/{token}', function ($token) {
+    return response()->json(['token' => $token]);
+})->name('password.reset');
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
