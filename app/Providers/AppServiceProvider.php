@@ -12,12 +12,7 @@ use App\Interface\EmailServiceInterface;
 use App\Interface\UserRepositoryInterface;
 use App\Interface\CredentialServiceInterface;
 use App\Interface\SosmedAuthServiceInterface;
-
-use App\Interface\EmailServiceInterface;
-use App\Interface\UserRepositoryInterface;
-use App\Interface\CredentialServiceInterface;
-use App\interface\PasswordResetInterface;
-use App\Interface\SosmedAuthServiceInterface;
+use App\Interface\PasswordResetInterface;
 use App\Services\PasswordResetService;
 
 
