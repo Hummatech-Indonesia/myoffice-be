@@ -32,9 +32,10 @@ class EmailService implements EmailServiceInterface
         }
 
         if ($user->markEmailAsVerified()) {
-            event(new Verified($user));
-        }
 
         return response()->json(['message' => 'Email successfully verified.']);
     }
 }
+
+            event(new Verified($user));
+        }
